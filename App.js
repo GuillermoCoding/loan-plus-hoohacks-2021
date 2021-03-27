@@ -9,6 +9,7 @@ import Friends from "./components/Friends";
 import IdentityUpload from "./components/IdentityUpload";
 import Contract from "./components/Contract";
 import Confirm from "./components/Confirm";
+import Success from "./components/Success";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,8 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Create a loan" component={LoanForm} />
         <Stack.Screen name="Contract" component={Contract} />
+        <Stack.Screen name="Confirm" component={Confirm} />
+        <Stack.Screen name="Success" component={Success} />
         {/*
           <Stack.Screen name="Create a loan" component={LoanForm} />
           <Stack.Screen name="Contract" component={Contract} />
