@@ -50,7 +50,9 @@ export default function Contract(props) {
               <Text style={styles.disagreeButtonText}>Decline</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.agreeButtonContainer}>
+            <TouchableOpacity style={styles.agreeButtonContainer} onPress={() => {
+                props.navigation.navigate('Confirm');
+              }}>
               <Text style={styles.agreeButtonText}>Agree</Text>
             </TouchableOpacity>
           </View>

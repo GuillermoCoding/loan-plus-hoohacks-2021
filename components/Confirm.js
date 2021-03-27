@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-n
 //import Signature from 'react-native-signature-canvas';
 import IdentityUpload from "./IdentityUpload";
 
-export default function Confirm() {
+export default function Confirm(props) {
   const [imageUrl, setImageUrl] = useState(null);
   const [isCameraOpen, setIsCameraOpen] = useState(false);
 
@@ -43,7 +43,9 @@ export default function Confirm() {
 					<Text style={styles.disagreeButtonText}>Go Back</Text>
 				</TouchableOpacity>
 
-				<TouchableOpacity style={styles.agreeButtonContainer}>
+        <TouchableOpacity style={styles.agreeButtonContainer} onPress={() => {
+            props.navigation.navigate('Success');
+          }}>
 					<Text style={styles.agreeButtonText}>Confirm</Text>
 				</TouchableOpacity>
 			</View>

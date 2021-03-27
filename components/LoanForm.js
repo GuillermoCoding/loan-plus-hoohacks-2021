@@ -12,7 +12,7 @@ export default function LoanForm({ navigation }) {
   };
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: "white" }}>
       <View style={styles.subContainer}>
         <Text style={styles.heading}>Select Loan Amount</Text>
         <Text style={styles.subheading}>Move the slider to select loan amount</Text>
