@@ -8,11 +8,11 @@ import {
 } from 'react-native';
 import { Camera } from 'expo-camera';
 
-export default function IdentityUpload() {
+export default function IdentityUpload({ setImageUrl, setIsCameraOpen }) {
 	const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [camera, setCamera] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
+  //const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -29,42 +29,52 @@ export default function IdentityUpload() {
   }
   return (
     <View style={styles.container}>
-      <Camera style={styles.camera} type={type} ref={ref => {setCamera(ref)}}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              setType(
-                type === Camera.Constants.Type.back
-                  ? Camera.Constants.Type.front
-                  : Camera.Constants.Type.back
-              );
-            }}>
-            <Text style={styles.text}> Flip </Text>
-          </TouchableOpacity>
+        <Camera style={styles.camera} type={type} ref={ref => {setCamera(ref)}}>
+          <View style={{height: 200, width: "80%", borderWidth: 2, borderColor: "#4EE5B7", borderRadius: 20, alignSelf: "center", marginTop: "70%"}}>
+          </View>
+        </Camera>
+      {/*
+      <View>
+      <View>
+        <View styles={{ height: 200}}>
+          <Image source={{ uri: imageUrl }} style={{width:200,height:200}} />
         </View>
-      </Camera>
-      <View style={{ height: 50 }}>
-        <TouchableOpacity style={{ height: 50 }} onPress={async () => {
+      </View> 
+      </View>
+      )}
+        */}
+      <View style={{width: "100%", flexDirection: "row", justifyContent: "center"}}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={async () => {
             let photo = await camera.takePictureAsync();
-            console.log(photo);
             setImageUrl(photo.uri);
+            setIsCameraOpen(false);
           }}>
-          <Text>Take image</Text>
+          <Text style={styles.buttonText}>Take image</Text>
         </TouchableOpacity>
       </View>
-      {imageUrl? (
-        <View styles={{ height: 50 }}>
-          <Text>HELLLO </Text>
-        </View>
-      ): null}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
-  camera: {flex: 1},
-  buttonContainer: {},
-  button: {}
+  container: {
+    flex: 1,
+  },
+  camera: {
+    height: "90%"
+  },
+  buttonContainer: {
+    marginTop: 10,
+    height: 40,
+    width: "50%",
+    backgroundColor: "black",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 17
+  }
 }); 
