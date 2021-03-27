@@ -30,7 +30,7 @@ export default function IdentityUpload({ setImageUrl, setIsCameraOpen }) {
   return (
     <View style={styles.container}>
         <Camera style={styles.camera} type={type} ref={ref => {setCamera(ref)}}>
-          <View style={{height: 200, width: "80%", borderWidth: 2, borderColor: "#4EE5B7", borderRadius: 20, alignSelf: "center", marginTop: "80%"}}>
+          <View style={{height: 200, width: "80%", borderWidth: 2, borderColor: "#4EE5B7", borderRadius: 20, alignSelf: "center", marginTop: "70%"}}>
           </View>
         </Camera>
       {/*
