@@ -8,7 +8,6 @@ export default function LoanForm({ navigation }) {
   const [numOfMonths, setNumOfMonths] = useState(2);
 
   const onCreateLoan = () => {
-    //console.log("=====")
     navigation.navigate('Friends', { message: "Hello World" });
   };
 
