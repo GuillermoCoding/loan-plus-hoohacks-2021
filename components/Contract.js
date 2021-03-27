@@ -34,10 +34,10 @@ export default function Contract() {
 
                 <Text style={styles.contractSections}>II. PAYMENT</Text>
                 {"\n"}
-
                 The Loan Amount shall be due and payable, including the principal and any accrued interest, under the following re-payment plan:{"\n"}
                 {"\n"}
-                Monthly payment of $350 beginning on March 31, 2021 and to be paid on the 31st of every month until the balance is paid ending on August 31, 2021.
+                Monthly payment of $50 beginning on March 31, 2021 and to be paid on the 31st of every month for {} months.{"\n"}
+                {"\n"}
               </Text>
             </ScrollView>
 
