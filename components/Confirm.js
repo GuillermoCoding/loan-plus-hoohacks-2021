@@ -19,7 +19,9 @@ export default function Confirm() {
             {imageUrl? (
               <Image source={{ uri: imageUrl }} style={{height: 200}} />
             ): 
-              <Text>Click here to take picture</Text>
+            <View style={{ width: "100%", height: "100%", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+              <Text style={{ fontWeight: "500"}}>Click here to take picture</Text>
+              </View>
             }
           </TouchableOpacity>
         </View>
@@ -28,7 +30,7 @@ export default function Confirm() {
         </View>
       </View>
       <Text style={{fontSize: 17}}>OR</Text>
-      <View style={styles.identityUploadContainer}>
+      <View style={styles.signatureMainComponent}>
         <View style={styles.signatureContainer}>
           <Text>X</Text>
         </View>
@@ -62,6 +64,10 @@ const styles = StyleSheet.create({
     width: "90%",
     marginTop: 50
   },
+  signatureMainComponent: {
+    //backgroundColor: "yellow",
+    width: "90%",
+  },
   signatureContainer: {
     height: 80,
     borderWidth: 1,
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
     //backgroundColor: "red",
     height: 230,
     borderWidth: 3,
-    borderStyle: "dashed",
+    //borderStyle: "dashed",
     borderRadius: 10,
     borderColor: "gray",
     //flexDirection: "row",
