@@ -15,6 +15,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Create a loan" component={LoanForm} />
         <Stack.Screen name="Contract" component={Contract} />
         {/*
           <Stack.Screen name="Create a loan" component={LoanForm} />

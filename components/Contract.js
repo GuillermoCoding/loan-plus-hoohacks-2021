@@ -8,7 +8,12 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default function Contract() {
+export default function Contract(props) {
+  const loanAmount = props.route.params.loanAmount;
+  const numOfMonths = props.route.params.numOfMonths;
+  console.log(loanAmount)
+  console.log(numOfMonths)
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Terms of Service</Text>
