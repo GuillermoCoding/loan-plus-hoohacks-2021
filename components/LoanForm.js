@@ -8,7 +8,7 @@ export default function LoanForm({ navigation }) {
   const [numOfMonths, setNumOfMonths] = useState(2);
 
   const onCreateLoan = () => {
-    navigation.navigate('Friends', { message: "Hello World" });
+    navigation.navigate('Contract', { loanAmount, numOfMonths });
   };
 
   return (
@@ -63,9 +63,9 @@ export default function LoanForm({ navigation }) {
           <Text style={styles.boldText}> ${(loanAmount/numOfMonths).toFixed(2)}</Text>
         </Text>
       </View>
-      <View>
+      <View style={styles.buttonOuterContainer}>
         <TouchableOpacity style={styles.submitButton} onPress={onCreateLoan}>
-          <Text>Get Loan</Text>
+          <Text style={styles.submitButtonText}>Get Loan</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -74,10 +74,10 @@ export default function LoanForm({ navigation }) {
 
 const styles = StyleSheet.create({
   subContainer: {
-    marginTop: 50
+    margin: 20
   },
   heading: {
-    fontWeight: "400",
+    fontWeight: "600",
     fontSize: 20
   },
   subheading: {
@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
     fontSize: 50,
   },
   resultContainer: {
-    marginTop: 60
+    marginTop: 40,
+    margin: 12
   },
   result: {
     fontSize: 20,
@@ -121,11 +122,22 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "black"
   },
+  buttonOuterContainer: {
+    justifyContent: "center",
+    flexDirection: "row"
+  },
   submitButton: {
     backgroundColor: "black",
     borderRadius: 50,
-    width: 200,
-    marginTop: 40
+    marginTop: 25,
+    paddingVertical: 18,
+    margin: 12,
+    width: 180,
+    alignItems: "center",
+  },
+  submitButtonText: {
+    color: "white",
+    fontSize: 24
   },
   dollarSign: {
     fontSize: 20,
