@@ -8,7 +8,11 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default function Contract() {
+export default function Contract(props) {
+  const loanAmount = props.route.params.loanAmount;
+  const numOfMonths = props.route.params.numOfMonths;
+  const monthlyPayments = loanAmount/numOfMonths
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Terms of Service</Text>
@@ -23,7 +27,7 @@ export default function Contract() {
                 do hereby acknowledge myself to be truly and lawfully indebted to{"\n"}
                 {"\n"}
                 James Van Brijk, Identity Number 00215125, Address West Street nr. 1245, Washington (hereinafter referred to as the Creditor)
-                in the sum of USD 500 (five hundred US dollars) together with 0% interest signed in Washington, on January 9, 2021.{"\n"}
+                in the sum of USD {loanAmount} together with 0% interest signed in Washington, on January 9, 2021.{"\n"}
                 {"\n"}
                 IN WITNESS WHEREOF
                 {"\n"}
@@ -36,7 +40,7 @@ export default function Contract() {
                 {"\n"}
                 The Loan Amount shall be due and payable, including the principal and any accrued interest, under the following re-payment plan:{"\n"}
                 {"\n"}
-                Monthly payment of $50 beginning on March 31, 2021 and to be paid on the 31st of every month for {} months.{"\n"}
+                Monthly payments of {monthlyPayments.toFixed(2)} beginning on April 1, 2021 and to be paid on the 1st of every month for {numOfMonths} months.{"\n"}
                 {"\n"}
               </Text>
             </ScrollView>
